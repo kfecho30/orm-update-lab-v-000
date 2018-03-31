@@ -43,8 +43,7 @@ class Student
       LIMIT 1;
     SQL
     DB[:conn].execute(sql, self.name).map do |row|
-      self.name
-      end
+      row.create
     end
   end
 
