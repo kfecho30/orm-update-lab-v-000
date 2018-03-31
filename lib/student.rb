@@ -37,14 +37,13 @@ class Student
   end
 
   def self.find_by_name(name)
-    sql = <<-SQL 
+    sql = <<-SQL
       SELECT * FROM students
       WHERE name = ?
       LIMIT 1;
     SQL
     DB[:conn].execute(sql, self.name).map do |row|
-      if row.name == name
-        
+      self.name
       end
     end
   end
